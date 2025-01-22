@@ -1,0 +1,56 @@
+.upload-area {
+    border: 2px dashed var(--color-accent);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.upload-area:hover {
+    background: var(--color-accent);
+}
+
+.file-list {
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--color-bg);
+    margin-bottom: 0.5rem;
+    border: 2px solid var(--color-bg-secondary);
+    border-radius: 4px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.checkbox-container {
+    margin: 15px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    border: 2px solid var(--color-bg-secondary);
+    background-color: var(--color-bg);
+    color: #fff;
+}

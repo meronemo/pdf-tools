@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html color-mode="user">
+<head>
+    <title>PDF Tools</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>PDF Tools</h1>
+        </header>
+
+        <div class="container">
+            <!-- Merge -->
+            <div id="merge">
+                <h2>Merge PDF</h2>
+                <form action="/merge" method="post" enctype="multipart/form-data">
+                    <div class="upload-area" id="merge-drop-area">
+                        <p>Upload Files</p>
+                        <input type="file" id="merge-files" name="files" multiple accept=".pdf" style="display: none">
+                    </div>
+                    <ul class="file-list" id="merge-file-list" data-sortable="true"></ul>
+                    <input type="hidden" id="file-order" name="file_order">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="insert-blank" name="insert_blank">
+                        <label for="insert-blank">PDF 사이 빈 페이지 삽입</label>
+                    </div>
+                    <input id="file-name" name="file_name" placeholder="파일 이름 (선택)">
+                    <button type="submit">Merge</button>
+                </form>
+            </div>
+
+            <!-- Unlock -->
+            <div id="unlock">
+                <h2>Unlock PDF</h2>
+                <form action="/unlock" method="post" enctype="multipart/form-data">
+                    <div class="upload-area" id="unlock-drop-area">
+                        <p>Upload Files</p>
+                        <input type="file" id="unlock-file" name="file" accept=".pdf" style="display: none">
+                    </div>
+                    <ul class="file-list" id="unlock-file-list"></ul>
+                    <input type="hidden" id="unlock-file-name" name="file_name">
+                    <button type="submit">Unlock</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="{{ url_for('static', path='/script.js') }}"></script>
+</body>
+</html>
